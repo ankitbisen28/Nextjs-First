@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next-First
 
-## Getting Started
+Throughout the development of this repository, I embarked on a journey to master Next.js, a powerful framework for building modern web applications. One of the key highlights of this project is the successful implementation of authentication in Next.js, a feat I achieved thanks to the invaluable guidance and teachings of Hitesh Chaudhary. His comprehensive course on FreeCodeCamp's YouTube channel was an absolute game-changer, providing me with the knowledge and skills to make this project possible.
 
-First, run the development server:
+## Tech Stack
+
+**Client:** Nextjs, TailwindCSS, Nodemailer, TypeScript
+
+**Server:** Nextjs, Mongodb,
+
+## Run Locally
+
+Clone the project
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+  git clone git@github.com:ankitbisen28/Nextjs-First.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Install dependencies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+  npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Start the Development Server
 
-## Learn More
+```bash
+  npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Screenshots
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![Screenshot](./Next-first.png)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 🚀 About Me
 
-## Deploy on Vercel
+Hello Everyone, Hi, I'm Ankit Bisen, a 20-year-old Software Development Student with a bachelor of Vocational in Software development and experience with MERN Stack Development.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🔗 Links
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ankitbisen.live/)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ankitbisen28)
+[![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/ankitbisen28)
+
+## 🛠 Skills
+
+Javascript, nodejs, express, mongodb, Nextjs

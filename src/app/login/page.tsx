@@ -14,9 +14,11 @@ export default function LoginPage() {
   });
 
   const [buttonDisable, setButtonDisable] = React.useState(true);
+  const [loading, setLoading] = React.useState(false);
 
   const onLogin = async () => {
     try {
+      setLoading(true);
       const response = await axios.post("/api/users/login", user);
       console.log("Login success", response.data);
       toast.success("Login Success");
@@ -24,6 +26,8 @@ export default function LoginPage() {
     } catch (error: any) {
       console.log("Signup Failed", error.message);
       toast.error(error.message);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -37,9 +41,11 @@ export default function LoginPage() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
-      <h1>Login</h1>
+      <h1 className="text-3xl">{loading ? "Processing" : "Login"}</h1>
       <hr />
-      <label htmlFor="email">Email</label>
+      <label htmlFor="email" className="text-xl p-3">
+        Email
+      </label>
       <input
         className="p-2 border border-gray-300 rounded-lg-mb-4 focus:outline-none focus:border-gray-600 text-black"
         type="text"
@@ -48,18 +54,20 @@ export default function LoginPage() {
         onChange={(e) => setUser({ ...user, email: e.target.value })}
         placeholder="username"
       />
-      <label htmlFor="password">Password</label>
+      <label htmlFor="password" className="text-xl p-3">
+        Password
+      </label>
       <input
         className="p-2 border border-gray-300 rounded-lg-mb-4 focus:outline-none focus:border-gray-600 text-black"
         type="password"
         id="password"
         value={user.password}
         onChange={(e) => setUser({ ...user, password: e.target.value })}
-        placeholder="username"
+        placeholder="password"
       />
       <button
         onClick={onLogin}
-        className="p-2 border border-gray-300 rounded-lg-mb-4 focus:outline-none focus:border-gray-600"
+        className="p-2 m-3 rounded-lg-mb-4 focus:outline-none bg-orange-500 text-black font-semibold"
       >
         Login here
       </button>

@@ -5,14 +5,20 @@ import bcryptjs, { hash } from "bcryptjs";
 export const sendEmail = async ({ email, emailType, userId }: any) => {
   try {
     // create a hashed token
-    const hashedToken = await bcryptjs.hash(userId.toString(), 10);
+    const characters =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    const token = await bcryptjs.hash(userId.toString(), 10);
+    const hashedToken = token
+      .split("")
+      .filter((char) => characters.includes(char))
+      .join("");
 
     if (emailType === "VERIFY") {
       await User.findByIdAndUpdate(userId, {
         verifyToken: hashedToken,
         verifyTokenExpiry: Date.now() + 3600000,
       });
-    } else if ((emailType = "REST")) {
+    } else if ((emailType = "RESET")) {
       await User.findByIdAndUpdate(userId, {
         forgotPasswordToken: hashedToken,
         forgotPasswordTokenExpiry: Date.now() + 3600000,
@@ -35,7 +41,7 @@ export const sendEmail = async ({ email, emailType, userId }: any) => {
         emailType === "VERIFY" ? "Verify your email" : "Reset your password",
       html: `<p>Click <a href="${
         process.env.DOMAIN
-      }/verifyemail?token=${hashedToken}">here</a> to ${
+      }/${emailType.toLowerCase()}?token=${hashedToken}">here</a> to ${
         emailType === "VERIFY" ? "Verify your email" : "reset your password"
       }</p>`,
     };

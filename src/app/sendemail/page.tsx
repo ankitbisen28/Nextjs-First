@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import toast from "react-hot-toast";
 import axios from "axios";
 
-export default function sendForgotEmail() {
+export default function SendForgotEmail() {
   const [user, setUser] = useState({ email: "" });
   const [forgotPasswordStatus, setForgotPasswordStatus] = React.useState(false);
   const [loading, setLoading] = React.useState(false);

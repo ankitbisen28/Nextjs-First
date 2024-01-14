@@ -71,7 +71,7 @@ export default function LoginPage() {
       >
         Login here
       </button>
-      <Link className="mb-3" href="/sendForgotEmail">Let's forget password</Link>
+      <Link className="mb-3" href="/sendemail">Let's forget password</Link>
       <Link href="/signup">Visit Signup page</Link>
     </div>
   );
